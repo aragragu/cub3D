@@ -6,11 +6,11 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:16:20 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 16:01:30 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 16:51:42 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 int	is_map_line(char *str)
 {

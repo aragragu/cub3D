@@ -1,15 +1,14 @@
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 int handle_exit()
 {
-    // (void)param;
+
     printf("Exiting the program...\n");
     exit(0);
 }
 
 int main(int argc, char *argv[])
 {
-    // (void)argv;
     t_data data;
 
 	if (argc == 2)

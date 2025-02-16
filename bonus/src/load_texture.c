@@ -6,11 +6,11 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:28:36 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 16:32:36 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:01:10 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../cub3d_bonus.h"
+#include "../cub3d_bonus.h"
 
 void	texture_allocation(t_data *data)
 {
@@ -36,8 +36,9 @@ void	xpm_file_to_image(t_data *data, void *mlx)
 			&data->game.image[2]->width, &data->game.image[2]->height);
 	data->game.image[3]->image = mlx_xpm_file_to_image(mlx, data->game.south, \
 			&data->game.image[3]->width, &data->game.image[3]->height);
-	data->game.image[4]->image = mlx_xpm_file_to_image(mlx, "bonus/assets/DOOR.xpm", \
-			&data->game.image[4]->width, &data->game.image[4]->height);
+	data->game.image[4]->image = mlx_xpm_file_to_image(mlx, \
+		"bonus/assets/DOOR.xpm", &data->game.image[4]->width, \
+			&data->game.image[4]->height);
 }
 
 void	get_image_addr(t_data *data)

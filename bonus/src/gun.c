@@ -6,12 +6,11 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:46:09 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 16:32:29 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:02:27 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-# include "../cub3d_bonus.h"
+#include "../cub3d_bonus.h"
 
 void	load_gun_frames(t_data	*data)
 {
@@ -37,10 +36,6 @@ void	load_gun_frames(t_data	*data)
 		i++;
 		gun_num++;
 	}
-	data->game.current_frame = 0;
-	data->game.frame_delay = 5;
-	data->game.frame_counter = 0;
-	data->game.is_shooting = 0;
 }
 
 static	void	update_gun_frame(t_game *game)

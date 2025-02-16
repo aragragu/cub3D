@@ -1,4 +1,4 @@
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 /*modification: some cases are handled in the parse part*/
 bool is_player_cell(char cell)

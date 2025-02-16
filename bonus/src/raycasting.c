@@ -1,4 +1,4 @@
-# include "../cub3d_bonus.h"
+#include "../cub3d_bonus.h"
 
 void	initialize_ray(t_ray *ray, t_data *data, int x)
 {

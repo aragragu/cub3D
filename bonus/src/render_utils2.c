@@ -1,4 +1,4 @@
-# include "../cub3d_bonus.h"
+#include "../cub3d_bonus.h"
 
 int	color_cell_matching(char cell)
 {

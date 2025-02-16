@@ -1,4 +1,4 @@
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 // Helper function to check if a position is walkable
 int is_walkable(t_map *map, double x, double y)

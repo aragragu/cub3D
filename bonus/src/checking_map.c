@@ -6,11 +6,11 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 20:03:57 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 16:06:45 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:00:27 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../cub3d_bonus.h"
+#include "../cub3d_bonus.h"
 
 int	check_first_and_last(char *str)
 {

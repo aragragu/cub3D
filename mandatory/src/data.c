@@ -1,4 +1,4 @@
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 void init_player_defaults(t_player *player)
 {
@@ -49,7 +49,6 @@ void data_init(t_data *data)
     data->win = mlx_new_window(data->mlx, MAP_WIDTH, MAP_HEIGHT, "Cub3D");
     if (!data->win)
         quit("Error: Window creation failed!");
-    mlx_string_put(data->mlx, data->win, 1200, 400, 0xFFFFFF, "Loading textures...");
     images_init(data);
     colors_init(data);
     player_init(&data->map, &data->player);

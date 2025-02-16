@@ -6,11 +6,11 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:42:51 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/16 16:06:45 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:00:27 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../cub3d_bonus.h"
+#include "../cub3d_bonus.h"
 
 void	move_forward(t_player *player, t_map *map)
 {

@@ -1,4 +1,4 @@
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 void player_dir(t_data *data, int player_x, int player_y)
 {

@@ -6,11 +6,11 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:28:36 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 16:01:30 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:08:02 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 void	texture_allocation(t_data *data)
 {
@@ -61,7 +61,7 @@ void	images_init(t_data *data)
 	if (!data->game.image[0]->image || !data->game.image[1]->image || \
 		!data->game.image[2]->image || !data->game.image[3]->image)
 	{
-		// free_textures(data);
+		free_textures(data);
 		my_perror(1, "load textures::failed\n");
 	}
 	get_image_addr(data);

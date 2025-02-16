@@ -6,11 +6,11 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:31:53 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/16 16:06:45 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:35:05 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../cub3d_bonus.h"
+#include "../cub3d_bonus.h"
 
 void	init_img_data(t_data *data)
 {
@@ -18,6 +18,10 @@ void	init_img_data(t_data *data)
 			&data->img.bpp, &data->img.size_line, &data->img.endian);
 	if (!data->img.data)
 		quit("Error: Failed to get image data address!");
+	data->game.current_frame = 0;
+	data->game.frame_delay = 5;
+	data->game.frame_counter = 0;
+	data->game.is_shooting = 0;
 }
 
 void	init_img(t_data *data)
@@ -44,6 +48,8 @@ void	init_mlx_and_window(t_data *data)
 void	data_init(t_data *data)
 {
 	init_mlx_and_window(data);
+	mlx_string_put(data->mlx, data->win, 1200, 400, 0xFFFFFF, "Loading ...");
+	sleep(2);
 	images_init(data);
 	colors_init(data);
 	load_gun_frames(data);

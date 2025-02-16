@@ -45,6 +45,14 @@ enum
 #define RIGHT_KEY 65363    // Right arrow key for rotating right
 #define ESCAPE_KEY 65307   // Escape key
 
+// #define W_KEY 13          // W key for forward (macOS)
+// #define A_KEY 0           // A key for strafe left (macOS)
+// #define S_KEY 1           // S key for backward (macOS)
+// #define D_KEY 2           // D key for strafe right (macOS)
+// #define LEFT_KEY 123      // Left arrow key for rotating left (macOS)
+// #define RIGHT_KEY 124     // Right arrow key for rotating right (macOS)
+// #define ESCAPE_KEY 53     // Escape key (macOS)
+
 #define MOVE_SPEED 2.8
 #define ROT_SPEED 0.06
 #define HITBOX_MARG 0.2
@@ -203,7 +211,6 @@ typedef struct s_game
     double          frame_delay;
     int             frame_counter;
     int             is_shooting;
-    // t_textures *gun[50];
     t_textures *gun[21];
     t_textures *image[5];
 

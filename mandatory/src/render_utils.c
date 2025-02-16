@@ -1,4 +1,4 @@
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 int get_pixel_index(int x, int y, t_img *img)
 {

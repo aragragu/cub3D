@@ -1,4 +1,4 @@
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 
 void render(t_data *data)
@@ -7,7 +7,6 @@ void render(t_data *data)
     // update_gun_animation();
     clear_img(data);
     render_ceiling_and_floor(data);
-    puts("ok");
     raycast(data);
     render_minimap(data);
     // render_gun_sprite(data);

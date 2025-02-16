@@ -1,4 +1,4 @@
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 void calculate_viewport(t_data *data, int *start_x, int *start_y, int *end_x, int *end_y)
 {
