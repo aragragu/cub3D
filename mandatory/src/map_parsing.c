@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parsing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:16:20 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 16:51:42 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:06:03 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void	validat_map(char **map)
 	}
 	if (count > 1 || count == 0)
 		my_perror(1, "error: to many player start position\n");
+	if (count == 1)
+		check_player_surending(map);
 }
 
 void	fill_map(char **str, t_parsing *info)

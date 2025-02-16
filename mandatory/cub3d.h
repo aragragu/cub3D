@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:58 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 17:50:07 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:06:58 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -295,5 +295,7 @@ int	map_lenghttttttttttttt(t_data *data);
 void	images_init(t_data *data);
 void	free_textures(t_data *data);
 void	colors_init(t_data *data);
+void	check_player_surending(char **map);
+int	    check_surrending(char **str, int x, int y);
 
 #endif

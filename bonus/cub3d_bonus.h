@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:37 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 17:43:46 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 19:38:59 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ enum
 };
      
 #define CELL_SIZE 32          // Map tile size
-#define FOV 0.66               // Field of view
+#define FOV 0.90               // Field of view
 
 #define W_KEY 119          // W key for forward
 #define A_KEY 97           // A key for strafe left
@@ -52,12 +52,12 @@ enum
 // #define LEFT_KEY 123      // Left arrow key for rotating left (macOS)
 // #define RIGHT_KEY 124     // Right arrow key for rotating right (macOS)
 // #define ESCAPE_KEY 53     // Escape key (macOS)
-#define MOVE_SPEED 2.8
+#define MOVE_SPEED 4
 #define ROT_SPEED 0.06
 #define HITBOX_MARG 0.2
 #define PI 3.141592653589793
-#define MAP_WIDTH 2400
-#define MAP_HEIGHT 800
+#define MAP_WIDTH 2000
+#define MAP_HEIGHT 1500
 #define MINIMAP_CENTER_X 100
 #define MINIMAP_CENTER_Y 100
 #define MINIMAP_TILE_SIZE 10
