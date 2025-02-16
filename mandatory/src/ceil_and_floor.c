@@ -67,5 +67,4 @@ void render_ceiling_and_floor(t_data *data)
         ceil_and_floor_filling2(data, x, y, row_distance);
         y++;
     }
-    puts("ceil");
 }
