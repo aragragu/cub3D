@@ -6,7 +6,7 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:37 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 20:40:21 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:42:06 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -349,5 +349,6 @@ void	colors_init(t_data *data);
 void    load_gun_frames(t_data  *data);
 void    render_gun_sprite(t_data *data);
 void	check_player_surending(char **map);
+int	check_surrending(char **str, int x, int y);
 
 #endif

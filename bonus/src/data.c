@@ -6,7 +6,7 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:31:53 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/16 17:35:05 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:43:59 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void	init_mlx_and_window(t_data *data)
 void	data_init(t_data *data)
 {
 	init_mlx_and_window(data);
-	mlx_string_put(data->mlx, data->win, 1200, 400, 0xFFFFFF, "Loading ...");
+	mlx_string_put(data->mlx, data->win, (MAP_WIDTH / 2), (MAP_HEIGHT / 2), \
+		0xFFFFFF, "Loading ...");
 	sleep(2);
 	images_init(data);
 	colors_init(data);
