@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parsing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:16:20 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 20:06:03 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:30:32 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,8 @@ void	parse_map(t_data *data)
 	if (!data->map.grid)
 		my_perror(1, "malloc error\n");
 	fill_map(data->map.grid, data->info);
-	validat_map(data->map.grid);
 	check_map_surrending(data->map.grid);
+	validat_map(data->map.grid);
 	check_inside_map(data->map.grid);
 	data->map.width = map_lenghttttttttttttt(data);
 	data->map.height = ft_strlen2(data->map.grid);

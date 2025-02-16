@@ -6,7 +6,7 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 20:03:57 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 17:00:27 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:38:31 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ int	check_surrending(char **str, int x, int y)
 {
 	if (str[x][y + 1] == ' ' || !str[x][y + 1])
 		return (0);
-	if (y > 0 && str[x][y - 1] == ' ')
+	if ((y > 0 && str[x][y - 1] == ' ') || !str[x][y - 1])
 		return (0);
-	if (str[x - 1][y] == ' ')
+	if (str[x - 1][y] == ' ' || !str[x - 1][y])
 		return (0);
-	if (str[x + 1][y] && str[x + 1][y] == ' ')
+	if ((str[x + 1][y] && str[x + 1][y] == ' ') || !str[x + 1][y])
 		return (0);
 	return (1);
 }

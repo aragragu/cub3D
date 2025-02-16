@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:37 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 19:38:59 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:40:21 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -348,5 +348,6 @@ void	free_textures(t_data *data);
 void	colors_init(t_data *data);
 void    load_gun_frames(t_data  *data);
 void    render_gun_sprite(t_data *data);
+void	check_player_surending(char **map);
 
 #endif
