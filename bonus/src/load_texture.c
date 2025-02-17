@@ -6,7 +6,7 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:28:36 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 17:01:10 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:53:51 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ void	texture_allocation(t_data *data)
 
 void	xpm_file_to_image(t_data *data, void *mlx)
 {
-	data->game.image[0]->image = mlx_xpm_file_to_image(mlx, data->game.norh, \
+	data->game.image[0]->image = mlx_xpm_file_to_image(mlx, data->game.east, \
 			&data->game.image[0]->width, &data->game.image[0]->height);
 	data->game.image[1]->image = mlx_xpm_file_to_image(mlx, data->game.west, \
 			&data->game.image[1]->width, &data->game.image[1]->height);
-	data->game.image[2]->image = mlx_xpm_file_to_image(mlx, data->game.east, \
+	data->game.image[2]->image = mlx_xpm_file_to_image(mlx, data->game.south, \
 			&data->game.image[2]->width, &data->game.image[2]->height);
-	data->game.image[3]->image = mlx_xpm_file_to_image(mlx, data->game.south, \
+	data->game.image[3]->image = mlx_xpm_file_to_image(mlx, data->game.norh, \
 			&data->game.image[3]->width, &data->game.image[3]->height);
 	data->game.image[4]->image = mlx_xpm_file_to_image(mlx, \
 		"bonus/assets/DOOR.xpm", &data->game.image[4]->width, \
