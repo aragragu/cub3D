@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ceil_and_floor.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 16:34:22 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/16 17:38:48 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:34:25 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,3 @@ void	render_ceiling_and_floor(t_data *data)
 		y++;
 	}
 }
-

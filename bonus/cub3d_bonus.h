@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:37 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/17 15:30:57 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:54:01 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,19 @@ typedef struct s_free
     struct s_free   *next;
 }               t_free;
 
+typedef struct s_rect
+{
+    int x;
+    int y;
+    int width;
+    int height;
+    int color;
+}   t_rect;
+
 typedef struct s_img
 {
+    int img_width;
+    int img_height;
     void *img_ptr;
     unsigned char *data;
     int bpp;
@@ -113,6 +124,7 @@ typedef struct s_img
     int endian;
     int width;
     int height;
+    t_rect rect;
 } t_img;
 
 typedef struct s_ray
@@ -250,16 +262,16 @@ void	set_player_direction(char cell, t_player *player);
 void	set_direction(t_player *player, double dir_x, double dir_y);
 int get_pixel_index(int x, int y, t_img *img);
 void draw_pixel(t_img *img, int x, int y, int color);
-void put_pixel_to_image(t_img *img, int x, int y, int color, int img_width, int img_height);
+void put_pixel_to_image(t_img *img, int x, int y, int color);
 void calculate_line_steps(int x1, int y1, int x2, int y2, int *dx, int *dy, int *p);
 int color_cell_matching(char cell);
 void draw_line(t_img *img, int x1, int y1, int x2, int y2, int color);
-void draw_rectangle(t_img *img, int x, int y, int width, int height, int color, int img_width, int img_height);
+void draw_rectangle(t_img *img);
+// void draw_rectangle(t_img *img, int x, int y, int width, int height, int color, int img_width, int img_height);
 void render(t_data *data);
 void map_free(t_map *map);
 void raycast(t_data *data);
 void render_minimap(t_data *data);
-void draw_rectangle(t_img *img, int x, int y, int width, int height, int color, int img_width, int img_height);
 void render_3d_view(t_data *data);
 void render_ceiling_and_floor(t_data *data);
 void draw_minimap_tiles(t_data *data);

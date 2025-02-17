@@ -24,11 +24,10 @@ FRMW = -lmlx -framework OpenGL -framework AppKit -O3
 SRC = mandatory/src/ceil_and_floor.c mandatory/src/ft_split.c mandatory/src/movements2.c mandatory/src/render_utils.c \
       mandatory/src/checking_map.c mandatory/src/get_next_libe_utils.c mandatory/src/movements.c mandatory/src/utils1.c \
       mandatory/src/data.c mandatory/src/get_next_line.c mandatory/src/parse_data2.c mandatory/src/utils2.c  \
-      mandatory/src/keys.c mandatory/src/parse_data.c mandatory/src/utils3.c mandatory/src/data_utils.c mandatory/src/load_texture.c \
+      mandatory/src/keys.c mandatory/src/parse_data.c mandatory/src/utils3.c mandatory/src/data_utils.c mandatory/src/data_utils2.c mandatory/src/load_texture.c \
       mandatory/src/parsing.c mandatory/src/utils4.c mandatory/src/main.c mandatory/src/raycasting.c \
       mandatory/src/utils.c mandatory/src/draw_walls.c mandatory/src/map_parsing.c mandatory/src/raycasting_utils.c \
       mandatory/src/fill_data.c mandatory/src/render.c mandatory/src/ft_malloc.c \
-      mandatory/src/render_utils2.c
 
 OBJ = $(SRC:%.c=%.o)
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   raycasting.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/17 18:34:18 by tboussad          #+#    #+#             */
+/*   Updated: 2025/02/17 18:38:31 by tboussad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d_bonus.h"
 
 void	initialize_ray(t_ray *ray, t_data *data, int x)
@@ -19,11 +31,12 @@ void	initialize_ray(t_ray *ray, t_data *data, int x)
 
 void	calculate_wall_distance(t_ray *ray, t_player *player)
 {
-	(void)player;
 	if (ray->side == 0)
-		ray->perp_wall_dist = (ray->map_x - player->x + (1 - ray->step_x) / 2) / ray->ray_dir_x / CELL_SIZE;
+		ray->perp_wall_dist = (ray->map_x - player->x + (1 - ray->step_x) / 2)
+			/ ray->ray_dir_x / CELL_SIZE;
 	else
-		ray->perp_wall_dist = (ray->map_y - player->y + (1 - ray->step_y) / 2) / ray->ray_dir_y / CELL_SIZE;
+		ray->perp_wall_dist = (ray->map_y - player->y + (1 - ray->step_y) / 2)
+			/ ray->ray_dir_y / CELL_SIZE;
 }
 
 void	calculate_line_dimensions(t_ray *ray, int screen_height)

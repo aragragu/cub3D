@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:58 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/17 15:31:21 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:49:31 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ typedef struct s_free
 
 typedef struct s_img
 {
+    int img_width;
+    int img_height;
     void *img_ptr;
     unsigned char *data;
     int bpp;
@@ -174,6 +176,18 @@ typedef struct s_parsing
 	char		**file_lines;
 } t_parsing;
 
+typedef struct s_viewport
+{
+    int start_x;
+    int start_y;
+    int end_x;
+    int end_y;
+    double floor_x;
+    double floor_y;
+    double floor_step_x;
+    double floor_step_y;
+} t_viewport;
+
 typedef struct s_data
 {
     void *mlx;
@@ -181,6 +195,7 @@ typedef struct s_data
     t_map map;
     t_player player;
     t_player_trail player_trail;
+    t_viewport viewport;
     t_img img;
     t_game  game;
     t_parsing *info;
@@ -205,21 +220,21 @@ void data_init(t_data *data);
 void init_player_direction(t_player *player, char orientation);
 int get_pixel_index(int x, int y, t_img *img);
 void draw_pixel(t_img *img, int x, int y, int color);
-void put_pixel_to_image(t_img *img, int x, int y, int color, int img_width, int img_height);
+void put_pixel_to_image(t_img *img, int x, int y, int color);
 void calculate_line_steps(int x1, int y1, int x2, int y2, int *dx, int *dy, int *p);
 int color_cell_matching(char cell);
 void draw_line(t_img *img, int x1, int y1, int x2, int y2, int color);
-void draw_rectangle(t_img *img, int x, int y, int width, int height, int color, int img_width, int img_height);
 void render(t_data *data);
+void	set_direction(t_player *player, double dir_x, double dir_y);
+void	set_player_plane(t_player *player);
 void map_free(t_map *map);
 void raycast(t_data *data);
 void render_minimap(t_data *data);
-void draw_rectangle(t_img *img, int x, int y, int width, int height, int color, int img_width, int img_height);
 void render_3d_view(t_data *data);
 void render_ceiling_and_floor(t_data *data);
 void draw_minimap_tiles(t_data *data, int start_x, int start_y, int end_x, int end_y);
 void draw_player_on_minimap(t_data *data);
-void calculate_viewport(t_data *data, int *start_x, int *start_y, int *end_x, int *end_y);
+void calculate_viewport(t_data *data);
 void render_ceiling_and_floor(t_data *data);
 void initialize_ray(t_ray *ray, t_data *data, int x);
 void calculate_step_and_side_dist(t_ray *ray, t_data *data);

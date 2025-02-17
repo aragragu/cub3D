@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   raycasting_utils.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/17 18:35:36 by tboussad          #+#    #+#             */
+/*   Updated: 2025/02/17 18:41:53 by tboussad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d_bonus.h"
 
 void	clear_screen(t_data *data, int color)
@@ -33,7 +45,8 @@ void	calculate_step_and_side_dist(t_ray *ray, t_data *data)
 	else
 	{
 		ray->step_x = 1;
-		ray->side_dist_x = (ray->map_x + 1.0 - data->player.x) * ray->delta_dist_x;
+		ray->side_dist_x = (ray->map_x + 1.0 - data->player.x)
+			* ray->delta_dist_x;
 	}
 	if (ray->ray_dir_y < 0)
 	{
@@ -43,7 +56,8 @@ void	calculate_step_and_side_dist(t_ray *ray, t_data *data)
 	else
 	{
 		ray->step_y = 1;
-		ray->side_dist_y = (ray->map_y + 1.0 - data->player.y) * ray->delta_dist_y;
+		ray->side_dist_y = (ray->map_y + 1.0 - data->player.y)
+			* ray->delta_dist_y;
 	}
 }
 
@@ -69,7 +83,6 @@ void	perform_dda(t_ray *ray, t_map *map, t_player *player)
 		}
 		map_x = ray->map_x / CELL_SIZE;
 		map_y = ray->map_y / CELL_SIZE;
-
 		if (map->grid[map_y][map_x] == 'D')
 		{
 			ray->is_door = 1;
