@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:37 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/17 15:23:28 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:30:57 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #ifndef CUB3D_H
 #define CUB3D_H
 
-// #include "../mlx_linux/mlx.h"
 #include <mlx.h>
 #include <stdlib.h>
 #include <stdio.h>
