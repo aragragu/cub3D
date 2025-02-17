@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   render_utils2.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/17 18:35:44 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/17 18:53:38 by tboussad         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../cub3d_bonus.h"
 
 int	color_cell_matching(char cell)
@@ -78,38 +66,20 @@ void	draw_line(t_img *img, int x1, int y1, int x2, int y2, int color)
 		draw_vertical_line(img, &x, &y, &p, dx, dy, x2, y2, color);
 }
 
-void draw_rectangle(t_img *img)
+void	draw_rectangle(t_img *img, int x, int y, int width, int height, int color, int img_width, int img_height)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    while (i < img->rect.height)
-    {
-        j = 0;
-        while (j < img->rect.width)
-        {
-            put_pixel_to_image(img, img->rect.x + j, img->rect.y + i, img->rect.color);
-            j++;
-        }
-        i++;
-    }
+	i = 0;
+	while (i < height)
+	{
+		j = 0;
+		while (j < width)
+		{
+			put_pixel_to_image(img, x + j, y + i, color, img_width, img_height);
+			j++;
+		}
+		i++;
+	}
 }
-
-// void	draw_rectangle(t_img *img, int x, int y, int width, int height, int color, int img_width, int img_height)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 0;
-// 	while (i < height)
-// 	{
-// 		j = 0;
-// 		while (j < width)
-// 		{
-// 			put_pixel_to_image(img, x + j, y + i, color, img_width, img_height);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
