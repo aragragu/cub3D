@@ -6,9 +6,7 @@ int handle_exit()
     printf("Exiting the program...\n");
     exit(0);
 }
- void f(){
-    system("leaks cub3D");
- }
+
 int main(int argc, char *argv[])
 {
     // atexit(f);

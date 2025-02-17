@@ -6,7 +6,7 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:49:44 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/16 17:00:27 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:58:40 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	handle_mouse_move(int x, int y, void *param)
 void	setup_mouse_rotation(t_data *data)
 {
 	mlx_hook(data->win, 6, 1L << 6, handle_mouse_move, data);
-	// mlx_mouse_hide(data->mlx, data->win); // Ensure correct arguments
 }
 
 int	mouse_press(int button, int x, int y, t_data *data)

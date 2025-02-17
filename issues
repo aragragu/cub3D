@@ -1,18 +1,2 @@
-need to assign the right textures to the right walls
+found a function called color_cell_matching that is not used (found it in mandatory and bonus)
 
- 1
-1N1
-1
-
-1
-N
-1
-
-111
-1N  
-111
-
-
-1
-N1
-1

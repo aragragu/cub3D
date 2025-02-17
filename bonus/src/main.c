@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 20:03:23 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/17 15:23:42 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:58:11 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	handle_exit(void)
 {
 	printf("Exiting the program...\n");
+	ft_malloc(0, FREE);
 	exit(0);
 }
 

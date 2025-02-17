@@ -46,5 +46,5 @@ void calculate_line_steps(int x1, int y1, int x2, int y2, int *dx, int *dy, int 
 {
     *dx = abs(x2 - x1);
     *dy = abs(y2 - y1);
-    *p = 2 * (*dy) - (*dx); // Bresenham algo
+    *p = 2 * (*dy) - (*dx);
 }

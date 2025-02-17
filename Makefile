@@ -1,7 +1,7 @@
 NAME = cub3D
 NAME_BONUS = cub3D_bonus
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Ofast
+CFLAGS = -Wall -Wextra -Werror -Ofast -g
 RM = rm -rf
 
 FRMW = -lmlx -framework OpenGL -framework AppKit -O3

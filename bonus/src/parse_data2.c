@@ -6,7 +6,7 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:18:59 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 20:40:12 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:04:55 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void	check_player_surending(char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[i][j] == 'N' || map[i][j] == 'S' || map[i][j] == 'W' || map[i][j] == 'E')
+			if (map[i][j] == 'N' || map[i][j] == 'S' || \
+				map[i][j] == 'W' || map[i][j] == 'E')
 			{
 				if (!check_surrending(map, i, j))
 					my_perror(1, "error: player is not surrounded by walls\n");

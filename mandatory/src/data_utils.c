@@ -1,6 +1,5 @@
 #include "../cub3d.h"
 
-/*modification: some cases are handled in the parse part*/
 bool is_player_cell(char cell)
 {
     return (cell == 'N' || cell == 'S' || cell == 'E' || cell == 'W');
@@ -25,22 +24,22 @@ void set_player_direction(char cell, t_player *player)
 
 void set_player_plane(t_player *player)
 {
-    if (player->dir_y == -1) // North
+    if (player->dir_y == -1) 
     {
         player->plane_x = 0.9;
         player->plane_y = 0;
     }
-    else if (player->dir_y == 1) // South
+    else if (player->dir_y == 1)
     {
         player->plane_x = -0.9;
         player->plane_y = 0;
     }
-    else if (player->dir_x == -1) // West
+    else if (player->dir_x == -1)
     {
         player->plane_x = 0;
         player->plane_y = -0.9;
     }
-    else if (player->dir_x == 1) // East
+    else if (player->dir_x == 1)
     {
         player->plane_x = 0;
         player->plane_y = 0.9;
