@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:58 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 20:06:58 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:04:39 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,17 @@ enum
 };
 
 #define CELL_SIZE 32          // Map tile size
-#define FOV 0.66               // Field of view
-
-#define W_KEY 119          // W key for forward
-#define A_KEY 97           // A key for strafe left
-#define S_KEY 115          // S key for backward
-#define D_KEY 100          // D key for strafe right
-#define LEFT_KEY 65361     // Left arrow key for rotating left
-#define RIGHT_KEY 65363    // Right arrow key for rotating right
-#define ESCAPE_KEY 65307   // Escape key
+#define FOV 0.9               // Field of view
 
 
-// #define W_KEY 13          // W key for forward (macOS)
-// #define A_KEY 0           // A key for strafe left (macOS)
-// #define S_KEY 1           // S key for backward (macOS)
-// #define D_KEY 2           // D key for strafe right (macOS)
-// #define LEFT_KEY 123      // Left arrow key for rotating left (macOS)
-// #define RIGHT_KEY 124     // Right arrow key for rotating right (macOS)
-// #define ESCAPE_KEY 53     // Escape key (macOS)
+
+#define W_KEY 13          // W key for forward (macOS)
+#define A_KEY 0           // A key for strafe left (macOS)
+#define S_KEY 1           // S key for backward (macOS)
+#define D_KEY 2           // D key for strafe right (macOS)
+#define LEFT_KEY 123      // Left arrow key for rotating left (macOS)
+#define RIGHT_KEY 124     // Right arrow key for rotating right (macOS)
+#define ESCAPE_KEY 53     // Escape key (macOS)
 
 #define MOVE_SPEED 2
 #define ROT_SPEED 0.03

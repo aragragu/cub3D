@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:52:59 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/16 17:00:27 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:47:49 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void quit(char *msg)
 {
-    perror(msg);
-    exit(EXIT_FAILURE);
+    my_perror(0, msg);
 }
 
 int	game_loop(t_data *data)

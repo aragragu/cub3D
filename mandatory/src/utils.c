@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 16:51:01 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 17:21:35 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:17:57 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	quit(char *msg)
 {
-	perror(msg);
-	ft_malloc(1, FREE);
-	exit(EXIT_FAILURE);
+	my_perror(0, msg);
 }
 
 int	game_loop(t_data *data)

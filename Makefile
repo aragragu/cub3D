@@ -4,21 +4,22 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -Ofast
 RM = rm -rf
 
-MLX_MACOS = mlx_macos/libmlx.a
-MLX_LINUX = mlx_linux/libmlx.a
+FRMW = -lmlx -framework OpenGL -framework AppKit -O3
+# MLX_MACOS = mlx_macos/libmlx.a
+# MLX_LINUX = mlx_linux/libmlx.a
 
-OS = $(shell uname -s)
-ifeq ($(OS), Darwin)
-	INCLUDES += -Imlx_macos -Iinc/macos_inc
-	MLX = $(MLX_MACOS)
-	LIBS = -Lmlx_macos -lmlx -framework OpenGL -framework AppKit -O3
-else ifeq ($(OS), Linux)
-	INCLUDES += -Imlx_linux -Iinc/linux_inc
-	MLX = $(MLX_LINUX)
-	LIBS = -Lmlx_linux -lmlx -lXext -lX11 -lm
-else
-	$(error Unsupported OS. Only Darwin and Linux are supported.)
-endif
+# OS = $(shell uname -s)
+# ifeq ($(OS), Darwin)
+# 	INCLUDES += -Imlx_macos -Iinc/macos_inc
+# 	MLX = $(MLX_MACOS)
+# 	LIBS = -Lmlx_macos -lmlx -framework OpenGL -framework AppKit -O3
+# else ifeq ($(OS), Linux)
+# 	INCLUDES += -Imlx_linux -Iinc/linux_inc
+# 	MLX = $(MLX_LINUX)
+# 	LIBS = -Lmlx_linux -lmlx -lXext -lX11 -lm
+# else
+# 	$(error Unsupported OS. Only Darwin and Linux are supported.)
+# endif
 
 SRC = mandatory/src/ceil_and_floor.c mandatory/src/ft_split.c mandatory/src/movements2.c mandatory/src/render_utils.c \
       mandatory/src/checking_map.c mandatory/src/get_next_libe_utils.c mandatory/src/movements.c mandatory/src/utils1.c \
@@ -26,7 +27,7 @@ SRC = mandatory/src/ceil_and_floor.c mandatory/src/ft_split.c mandatory/src/move
       mandatory/src/keys.c mandatory/src/parse_data.c mandatory/src/utils3.c mandatory/src/data_utils.c mandatory/src/load_texture.c \
       mandatory/src/parsing.c mandatory/src/utils4.c mandatory/src/main.c mandatory/src/raycasting.c \
       mandatory/src/utils.c mandatory/src/draw_walls.c mandatory/src/map_parsing.c mandatory/src/raycasting_utils.c \
-      mandatory/src/fill_data.c mandatory/src/minimap.c mandatory/src/render.c mandatory/src/ft_malloc.c \
+      mandatory/src/fill_data.c mandatory/src/render.c mandatory/src/ft_malloc.c \
       mandatory/src/render_utils2.c
 
 OBJ = $(SRC:%.c=%.o)
@@ -45,24 +46,24 @@ OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
 
 all: $(NAME)
 
-$(MLX_MACOS):
-	@make -s -C mlx_macos
+# $(MLX_MACOS):
+# 	# @make -s -C mlx_macos
 
-$(MLX_LINUX):
-	@make -s -C mlx_linux
+# $(MLX_LINUX):
+# 	# @make -s -C mlx_linux
 
 $(NAME): $(MLX) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(MLX) $(LIBS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(FRMW) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ): mandatory/cub3d.h
 
 bonus: $(NAME_BONUS)
 
 $(NAME_BONUS): $(MLX) $(OBJ_BONUS)
-	$(CC) $(CFLAGS) $(OBJ_BONUS) $(MLX) $(LIBS) -o $(NAME_BONUS)
+	$(CC) $(CFLAGS) $(OBJ_BONUS) $(FRMW) -o $(NAME_BONUS)
 
 $(OBJ_BONUS): bonus/cub3d_bonus.h
 

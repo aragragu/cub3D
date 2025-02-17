@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:37 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 20:42:06 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:23:28 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #ifndef CUB3D_H
 #define CUB3D_H
 
-#include "../mlx_linux/mlx.h"
+// #include "../mlx_linux/mlx.h"
+#include <mlx.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -37,27 +38,20 @@ enum
 #define CELL_SIZE 32          // Map tile size
 #define FOV 0.90               // Field of view
 
-#define W_KEY 119          // W key for forward
-#define A_KEY 97           // A key for strafe left
-#define S_KEY 115          // S key for backward
-#define D_KEY 100          // D key for strafe right
-#define LEFT_KEY 65361     // Left arrow key for rotating left
-#define RIGHT_KEY 65363    // Right arrow key for rotating right
-#define ESCAPE_KEY 65307   // Escape key
+#define W_KEY 13          // W key for forward (macOS)
+#define A_KEY 0           // A key for strafe left (macOS)
+#define S_KEY 1           // S key for backward (macOS)
+#define D_KEY 2           // D key for strafe right (macOS)
+#define LEFT_KEY 123      // Left arrow key for rotating left (macOS)
+#define RIGHT_KEY 124     // Right arrow key for rotating right (macOS)
+#define ESCAPE_KEY 53     // Escape key (macOS)
 
-// #define W_KEY 13          // W key for forward (macOS)
-// #define A_KEY 0           // A key for strafe left (macOS)
-// #define S_KEY 1           // S key for backward (macOS)
-// #define D_KEY 2           // D key for strafe right (macOS)
-// #define LEFT_KEY 123      // Left arrow key for rotating left (macOS)
-// #define RIGHT_KEY 124     // Right arrow key for rotating right (macOS)
-// #define ESCAPE_KEY 53     // Escape key (macOS)
 #define MOVE_SPEED 4
 #define ROT_SPEED 0.06
 #define HITBOX_MARG 0.2
 #define PI 3.141592653589793
-#define MAP_WIDTH 2000
-#define MAP_HEIGHT 1500
+#define MAP_WIDTH 2400
+#define MAP_HEIGHT 800
 #define MINIMAP_CENTER_X 100
 #define MINIMAP_CENTER_Y 100
 #define MINIMAP_TILE_SIZE 10
