@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 18:35:36 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/17 18:41:53 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:29:03 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,22 @@ void	calculate_step_and_side_dist(t_ray *ray, t_data *data)
 	}
 }
 
+void	update_ray(t_ray *ray)
+{
+	if (ray->side_dist_x < ray->side_dist_y)
+	{
+		ray->side_dist_x += ray->delta_dist_x;
+		ray->map_x += ray->step_x;
+		ray->side = 0;
+	}
+	else
+	{
+		ray->side_dist_y += ray->delta_dist_y;
+		ray->map_y += ray->step_y;
+		ray->side = 1;
+	}
+}
+
 void	perform_dda(t_ray *ray, t_map *map, t_player *player)
 {
 	int	map_x;
@@ -69,18 +85,7 @@ void	perform_dda(t_ray *ray, t_map *map, t_player *player)
 	ray->hit = 0;
 	while (ray->hit == 0)
 	{
-		if (ray->side_dist_x < ray->side_dist_y)
-		{
-			ray->side_dist_x += ray->delta_dist_x;
-			ray->map_x += ray->step_x;
-			ray->side = 0;
-		}
-		else
-		{
-			ray->side_dist_y += ray->delta_dist_y;
-			ray->map_y += ray->step_y;
-			ray->side = 1;
-		}
+		update_ray(ray);
 		map_x = ray->map_x / CELL_SIZE;
 		map_y = ray->map_y / CELL_SIZE;
 		if (map->grid[map_y][map_x] == 'D')
@@ -92,13 +97,9 @@ void	perform_dda(t_ray *ray, t_map *map, t_player *player)
 				ray->hit = 0;
 			}
 			else
-			{
 				ray->hit = 2;
-			}
 		}
 		else if (map->grid[map_y][map_x] == '1')
-		{
 			ray->hit = 1;
-		}
 	}
 }

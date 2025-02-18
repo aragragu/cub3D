@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 20:03:41 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/17 20:19:32 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:20:13 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,14 @@ void	draw_minimap_tile(t_data *data, int x, int y)
 
 	tile_x = (x - data->minimap.start_x) * (CELL_SIZE / MINIMAP_SCALE);
 	tile_y = (y - data->minimap.start_y) * (CELL_SIZE / MINIMAP_SCALE);
-	draw_rectangle(&data->img, tile_x + 10, tile_y + 10,
-		(CELL_SIZE / MINIMAP_SCALE), (CELL_SIZE / MINIMAP_SCALE),
-		color_cell_matching(data->map.grid[y][x]),
-		MINIMAP_WIDTH, MINIMAP_HEIGHT);
+	data->img.width = MINIMAP_WIDTH;
+	data->img.height = MINIMAP_HEIGHT;
+	data->rect.x = tile_x + 10;
+	data->rect.y = tile_y + 10;
+	data->rect.width = (CELL_SIZE / MINIMAP_SCALE);
+	data->rect.height = (CELL_SIZE / MINIMAP_SCALE);
+	draw_rectangle(&data->img, data->rect,
+		color_cell_matching(data->map.grid[y][x]));
 }
 
 void	draw_minimap_tiles(t_data *data)
@@ -53,12 +57,17 @@ void	draw_minimap_frame(t_data *data)
 
 	frame_thickness = 5;
 	frame_color = MINIMAP_FRAME_COLOR;
-	draw_rectangle(&data->img, 10 - frame_thickness, 10 - frame_thickness,
-		MINIMAP_WIDTH + (2 * frame_thickness),
-		MINIMAP_HEIGHT + (2 * frame_thickness),
-		frame_color, data->img.width, data->img.height);
-	draw_rectangle(&data->img, 10, 10, MINIMAP_WIDTH,
-		MINIMAP_HEIGHT, 0x000000, data->img.width, data->img.height);
+	data->rect.x = 10 - frame_thickness;
+	data->rect.y = 10 - frame_thickness;
+	data->rect.width = MINIMAP_WIDTH + (2 * frame_thickness);
+	data->rect.height = MINIMAP_HEIGHT + (2 * frame_thickness);
+	draw_rectangle(&data->img, data->rect,
+		frame_color);
+	data->rect.x = 10;
+	data->rect.y = 10;
+	data->rect.width = MINIMAP_WIDTH;
+	data->rect.height = MINIMAP_HEIGHT;
+	draw_rectangle(&data->img, data->rect, 0x000000);
 }
 
 void	render_minimap(t_data *data)
