@@ -5,21 +5,6 @@ CFLAGS = -Wall -Wextra -Werror -Ofast -g
 RM = rm -rf
 
 FRMW = -lmlx -framework OpenGL -framework AppKit -O3
-# MLX_MACOS = mlx_macos/libmlx.a
-# MLX_LINUX = mlx_linux/libmlx.a
-
-# OS = $(shell uname -s)
-# ifeq ($(OS), Darwin)
-# 	INCLUDES += -Imlx_macos -Iinc/macos_inc
-# 	MLX = $(MLX_MACOS)
-# 	LIBS = -Lmlx_macos -lmlx -framework OpenGL -framework AppKit -O3
-# else ifeq ($(OS), Linux)
-# 	INCLUDES += -Imlx_linux -Iinc/linux_inc
-# 	MLX = $(MLX_LINUX)
-# 	LIBS = -Lmlx_linux -lmlx -lXext -lX11 -lm
-# else
-# 	$(error Unsupported OS. Only Darwin and Linux are supported.)
-# endif
 
 SRC = mandatory/src/ceil_and_floor.c mandatory/src/ft_split.c mandatory/src/movements2.c mandatory/src/render_utils.c \
       mandatory/src/checking_map.c mandatory/src/get_next_libe_utils.c mandatory/src/movements.c mandatory/src/utils1.c \
@@ -44,12 +29,6 @@ SRC_BONUS = bonus/src/ceil_and_floor.c bonus/src/data_utils.c bonus/src/main.c b
 OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
 
 all: $(NAME)
-
-# $(MLX_MACOS):
-# 	# @make -s -C mlx_macos
-
-# $(MLX_LINUX):
-# 	# @make -s -C mlx_linux
 
 $(NAME): $(MLX) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(FRMW) -o $(NAME)
