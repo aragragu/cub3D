@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:22:24 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/17 18:34:45 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:31:04 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	fill_textures(char *str, char **ptr, char **texture, int *count)
 			my_perror(1, "error: can't open texture file\n");
 		else
 			*texture = ft_strdup(str);
+		close(fd);
 		(*count)++;
 	}
 }
