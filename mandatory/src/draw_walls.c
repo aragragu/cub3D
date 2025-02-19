@@ -6,7 +6,7 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 20:36:12 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/16 16:51:42 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:13:02 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	get_texture_cordinates(t_ray *ray, t_data *data, t_cordinate *cordinate)
 	cordinate->wall_x /= CELL_SIZE;
 	cordinate->tex_x = (int)(cordinate->wall_x * \
 		data->game.image[cordinate->tex_num]->width);
-	if ((ray->side == 0 && ray->ray_dir_x > 0) || (ray->side == 1 \
-		&& ray->ray_dir_y < 0))
+	if ((ray->side == 0 && ray->ray_dir_x < 0) || (ray->side == 1 \
+		&& ray->ray_dir_y > 0))
 		cordinate->tex_x = data->game.image[cordinate->tex_num]->width \
 			- cordinate->tex_x - 1;
 	cordinate->tex_step = 1.0 * \
