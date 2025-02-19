@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 20:00:02 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/17 18:35:03 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/19 13:00:50 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	handle_key_press_rotation(int key, t_data *data)
 	else if (key == RIGHT_KEY)
 		data->player.rotate_right = 1;
 	else if (key == ESCAPE_KEY)
-		quit("Game exited successfully.");
+		my_perror(0, "Game exited successfully.");
 }
 
 void	handle_key_release(int key, t_data *data)

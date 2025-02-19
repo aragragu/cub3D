@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_malloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:02:48 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/19 12:35:34 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:57:19 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,12 @@ void	*ft_malloc(int size, int status)
 	{
 		rt = malloc(size);
 		if (!rt)
-			my_perror(1, "Error:\n: malloc failed\n");
+			my_perror(1, "Error\n: malloc failed\n");
 		tmp = addnew_free(rt);
 		if (!tmp)
 		{
 			ft_free_all(head);
-			my_perror(1, "Error:\n: malloc failed\n");
+			my_perror(1, "Error\n: malloc failed\n");
 		}
 		addback_free(&head, tmp);
 		return (rt);

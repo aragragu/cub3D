@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:22:24 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/19 12:34:38 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:57:19 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	parse_color(char *str)
 		}
 	}
 	else
-		my_perror(1, "Error:\n color count is not accurate\n");
+		my_perror(1, "Error\n color count is not accurate\n");
 	return (1);
 }
 
@@ -46,10 +46,10 @@ void	fill_color(char **str, char **texture, int *count)
 	char	*color;
 
 	if (ft_strlen2(str) != 2)
-		my_perror(1, "Error:\n: color config in not correct\n");
+		my_perror(1, "Error\n: color config in not correct\n");
 	color = str[1];
 	if (!parse_color(color))
-		my_perror(1, "Error:\n invalid colors\n");
+		my_perror(1, "Error\n invalid colors\n");
 	*texture = color;
 	(*count)++;
 }
@@ -65,7 +65,7 @@ void	fill_textures(char *str, char **texture, int *count)
 	{
 		fd = open(path, O_RDONLY);
 		if (fd == -1)
-			my_perror(1, "Error:\n can't open texture file\n");
+			my_perror(1, "Error\n can't open texture file\n");
 		else
 		{
 			*texture = ft_strdup(path);
@@ -74,7 +74,7 @@ void	fill_textures(char *str, char **texture, int *count)
 		}
 	}
 	else
-		my_perror(1, "Error:\n invalid map config\n");
+		my_perror(1, "Error\n invalid map config\n");
 }
 
 void	check_rest(char	**str)
@@ -92,7 +92,7 @@ void	check_rest(char	**str)
 		while (str[i][j])
 		{
 			if (!wrong_char(str[i][j]))
-				my_perror(1, "Error:\n invalid map config\n");
+				my_perror(1, "Error\n invalid map config\n");
 			j++;
 		}
 		i++;

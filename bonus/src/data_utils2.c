@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:32:38 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/17 18:34:34 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:58:41 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	init_player_defaults(t_player *player)
 void	player_init(t_map *map, t_player *player)
 {
 	if (!find_player_position(map, player))
-		quit("error: Player not found in the map!");
+		quit("Error\n Player not found in the map!");
 	init_player_defaults(player);
 	init_player_direction(player,
 		map->grid[(int)player->y / CELL_SIZE][(int)player->x / CELL_SIZE]);
@@ -43,7 +43,7 @@ void	init_player_trail(t_player_trail *trail)
 void	init_map_and_player(t_data *data)
 {
 	if (data->map.grid == NULL)
-		quit("Error: Map initialization failed!");
+		quit("Error\n Map initialization failed!");
 	player_init(&data->map, &data->player);
 	init_player_trail(&data->player_trail);
 }

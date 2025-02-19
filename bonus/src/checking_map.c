@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checking_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 20:03:57 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/19 12:34:38 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:57:19 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ void	check_map_surrending2(char **map, int i, int j)
 		{
 			if (map[i][j + 1] && !(map[i][j + 1] == '1' || \
 				map[i][j + 1] == '\0' || map[i][j + 1] == ' '))
-				my_perror(1, "Error:\n invalid map content\n");
+				my_perror(1, "Error\n invalid map content\n");
 			j++;
 		}
 		while (map[i][j] && map[i][j] != ' ')
 		{
 			if (map[i][j] == '0' && map[i][j + 1] && map[i][j + 1] == ' ')
-				my_perror(1, "Error:\n invalid map content\n");
+				my_perror(1, "Error\n invalid map content\n");
 			if (map[i][j] == '0' && !map[i][j + 1])
-				my_perror(1, "Error:\n invalid map content\n");
+				my_perror(1, "Error\n invalid map content\n");
 			j++;
 		}
 	}
@@ -57,7 +57,7 @@ void	check_map_surrending(char **map)
 	j = 0;
 	if (!check_first_and_last(map[ft_strlen2(map) - 1]) || \
 			!check_first_and_last(map[0]))
-		my_perror(1, "Error:\n invalid map\n");
+		my_perror(1, "Error\n invalid map\n");
 	while (map[i])
 	{
 		j = 0;
@@ -94,7 +94,7 @@ void	check_inside_map(char **map)
 			if (map[i][j] == '0' || map[i][j] == 'D')
 			{
 				if (!check_surrending(map, i, j))
-					my_perror(1, "Error:\n invalid map\n");
+					my_perror(1, "Error\n invalid map\n");
 			}
 			j++;
 		}

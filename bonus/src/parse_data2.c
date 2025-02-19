@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_data2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:18:59 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/19 12:49:56 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:57:19 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	check_player_surending(char **map)
 				map[i][j] == 'W' || map[i][j] == 'E')
 			{
 				if (!check_surrending(map, i, j))
-					my_perror(1, "Error:\n player is not \
+					my_perror(1, "Error\n player is not \
 						surrounded by walls\n");
 			}
 			j++;

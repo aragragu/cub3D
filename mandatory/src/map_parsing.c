@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parsing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:16:20 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/19 12:44:00 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:57:19 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	player_detected(char *str, int *player)
 		i++;
 	}
 	if (count > 1)
-		my_perror(1, "Error:\n to many player start position\n");
+		my_perror(1, "Error\n to many player start position\n");
 }
 
 void	validat_map(char **map)
@@ -59,18 +59,18 @@ void	validat_map(char **map)
 	while (map[i])
 	{
 		if (!map[i][0])
-			my_perror(1, "Error:\n invalid map\n");
+			my_perror(1, "Error\n invalid map\n");
 		if (only_space(map[i]))
-			my_perror(1, "Error:\n empty line in map");
+			my_perror(1, "Error\n empty line in map");
 		if (!is_map_line(map[i]))
-			my_perror(1, "Error:\n invalid map content\n");
+			my_perror(1, "Error\n invalid map content\n");
 		player_detected(map[i], &count);
 		i++;
 	}
 	if (count == 0)
-		my_perror(1, "Error:\n there's not player start position\n");
+		my_perror(1, "Error\n there's not player start position\n");
 	if (count > 1)
-		my_perror(1, "Error:\n to many player start position\n");
+		my_perror(1, "Error\n to many player start position\n");
 	if (count == 1)
 		check_player_surending(map);
 }
@@ -100,7 +100,7 @@ void	parse_map(t_data *data)
 	data->map.grid = (char **)ft_malloc(((sizeof(char *) \
 			* (map_lenght + 1))), ALLOC);
 	if (!data->map.grid)
-		my_perror(1, "Error:\n malloc error\n");
+		my_perror(1, "Error\n malloc error\n");
 	fill_map(data->map.grid, data->info);
 	check_map_surrending(data->map.grid);
 	validat_map(data->map.grid);
