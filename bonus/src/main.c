@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 20:03:23 by tboussad          #+#    #+#             */
-/*   Updated: 2025/02/17 18:35:08 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:42:54 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int	main(int argc, char *argv[])
 		ft_malloc(0, FREE);
 	}
 	else
-		my_perror(1, "wrong arguments\n");
+		my_perror(1, "Error:\n wrong arguments\n");
 	return (0);
 }

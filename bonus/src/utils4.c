@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils4.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:45:16 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/17 18:36:04 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:27:42 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,21 @@ int	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+char	*get_rest_of_line(char *str)
+{
+	char	*path;
+
+	path = NULL;
+	while (*str && *str == ' ')
+		str++;
+	while (*str && *str != ' ')
+		str++;
+	if (*str == '\0')
+		return (NULL);
+	path = ft_strtrim(str, " ");
+	if (*path == '\0')
+		return (NULL);
+	return (path);
 }

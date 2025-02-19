@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gun.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:46:09 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/17 18:34:57 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:42:43 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	load_gun_frames(t_data	*data)
 	{
 		data->game.gun[i] = ft_malloc(sizeof(t_textures), ALLOC);
 		if (!data->game.gun[i])
-			my_perror(1, "error: malloc failed\n");
+			my_perror(1, "Error:\n malloc failed\n");
 		data->game.gun[i]->image = mlx_xpm_file_to_image(data->mlx, \
 			ft_strjoin(ft_strjoin("bonus/assets/frames/", ft_itoa(gun_num)), \
 				".xpm"), &data->game.gun[i]->width, \
 					&data->game.gun[i]->height);
 		if (!data->game.gun[i]->image)
-			my_perror(1, "load textures::failed\n");
+			my_perror(1, "Error:\n load textures::failed\n");
 		data->game.gun[i]->add = mlx_get_data_addr(data->game.gun[i]->image, \
 			&data->game.gun[i]->bp_pixels, &data->game.gun[i]->l_length, \
 				&data->game.gun[i]->endian);

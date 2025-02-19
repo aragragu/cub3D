@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:28:36 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/17 18:35:05 by tboussad         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:42:51 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	texture_allocation(t_data *data)
 	{
 		data->game.image[i] = ft_malloc(sizeof(t_textures), ALLOC);
 		if (!data->game.image[i])
-			my_perror(1, "malloc::allocation_failed\n");
+			my_perror(1, "Error:\n malloc::allocation_failed\n");
 		i++;
 	}
 }
@@ -69,7 +69,7 @@ void	images_init(t_data *data)
 			!data->game.image[4]->image)
 	{
 		free_textures(data);
-		my_perror(1, "load textures::failed\n");
+		my_perror(1, "Error:\n load textures::failed\n");
 	}
 	get_image_addr(data);
 }

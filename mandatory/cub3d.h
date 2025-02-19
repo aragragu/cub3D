@@ -6,7 +6,7 @@
 /*   By: aragragu <aragragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:43:58 by aragragu          #+#    #+#             */
-/*   Updated: 2025/02/18 15:54:10 by aragragu         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:04:58 by aragragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,5 +283,6 @@ void	free_textures(t_data *data);
 void	colors_init(t_data *data);
 void	check_player_surending(char **map);
 int		check_surrending(char **str, int x, int y);
+char	*get_rest_of_line(char *str);
 
 #endif
