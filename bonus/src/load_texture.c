@@ -73,3 +73,20 @@ void	images_init(t_data *data)
 	}
 	get_image_addr(data);
 }
+
+void	check_coma(char *str)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (str[i] == ',')
+			count++;
+		i++;
+	}
+	if (count != 2)
+		my_perror(1, "Error\n invalid color\n");
+}

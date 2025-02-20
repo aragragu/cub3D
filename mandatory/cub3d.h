@@ -284,5 +284,6 @@ void	colors_init(t_data *data);
 void	check_player_surending(char **map);
 int		check_surrending(char **str, int x, int y);
 char	*get_rest_of_line(char *str);
+void	check_coma(char *str);
 
 #endif

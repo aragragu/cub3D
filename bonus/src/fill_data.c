@@ -48,6 +48,7 @@ void	fill_color(char **str, char **texture, int *count)
 	if (ft_strlen2(str) != 2)
 		my_perror(1, "Error\n: color config in not correct\n");
 	color = str[1];
+	check_coma(color);
 	if (!parse_color(color))
 		my_perror(1, "Error\n invalid colors\n");
 	*texture = color;
